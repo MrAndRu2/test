@@ -19,7 +19,7 @@ class Test
             $array_users_id = explode(',', $string_users_id);
             $verified_ids = [];
             foreach($array_users_id as $user_id){
-                if(is_int((int) ($user_id)) && $user_id > 0){
+                if(preg_match('/^\+?\d+$/', $user_id)){
                     $verified_ids[] = $user_id;
                 }
             }
